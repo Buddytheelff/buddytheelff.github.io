@@ -1,0 +1,33 @@
+/* Author:Buddy Collins */
+#mapid {
+    height: 600px;
+    width: 1000px;
+    display: inline-block;
+  }
+#chartid{
+    height:800px;
+    width:1200px;
+    display:inline-block;
+}
+.sequence-control-container {
+    width: 350px;
+    height: 30px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px;
+    line-height: 45px;
+    text-align: center;
+    border: solid gray 1px;
+}
+
+.info {
+  padding: 20px 12px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+.info h4 {
+  margin: 0 0 5px;
+  color: 'black';
+}
