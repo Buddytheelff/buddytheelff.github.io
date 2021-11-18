@@ -19,6 +19,7 @@ map = L.map('mapid').setView([39.1839102,-95.9745134], 4.45);
 // creates the map from mapbox api
 L.tileLayer('https://api.mapbox.com/styles/v1/buddytheelf/ckvsqoj1h11xk14oafqc8fdcm/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYnVkZHl0aGVlbGYiLCJhIjoiY2p2czYxbHNlMndjdzN5cGI3ejI4aWJ5dyJ9.5IPoN9dD2-6boYGfX4ondQ', {
   maxZoom:7,
+  minZoom:4,
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 }).addTo(map);
 

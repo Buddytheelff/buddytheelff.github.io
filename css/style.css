@@ -1,19 +1,36 @@
 /* Author:Buddy Collins */
 #mapid {
     height: 600px;
-    width: 75%;
+    width: 80%;
     display: inline-block;
-    margin: auto;
+    margin-left: 10%;
+    margin-right: 10%;
 
 
   }
 #chartid{
     height:300px;
-    width:75%;
+    width:80%;
+    text-align: center;
     display:inline-block;
     background-color: #e6e6e6;
-    margin: auto;
+    margin-left: 10%;
+    margin-right: 10%;
 
+}
+#header {
+  width: 80%;
+  background-color: #f1f1f1;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#footer {
+  width: 80%;
+  background-color: #f1f1f1;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .sequence-control-container {
     width: 350px;
