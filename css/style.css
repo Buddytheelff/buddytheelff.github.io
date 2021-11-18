@@ -1,13 +1,19 @@
 /* Author:Buddy Collins */
 #mapid {
     height: 600px;
-    width: 1000px;
+    width: 75%;
     display: inline-block;
+    margin: auto;
+
+
   }
 #chartid{
-    height:800px;
-    width:1200px;
+    height:300px;
+    width:75%;
     display:inline-block;
+    background-color: #e6e6e6;
+    margin: auto;
+
 }
 .sequence-control-container {
     width: 350px;
