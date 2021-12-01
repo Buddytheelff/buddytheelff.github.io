@@ -29,7 +29,7 @@ function createChart(){
 
 
   var scale_x = d3.scaleBand()
-  .domain(year)
+  .domain(data.x)
   .range([0,width]);
 
   var scale_y = d3.scaleLinear()
