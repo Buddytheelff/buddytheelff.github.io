@@ -3,8 +3,9 @@
 var geojson;
 var map;
 var info = L.control();
-
-
+var polygonStyle = {
+  "weight": 3,
+  "color": "#6699ff"};
 window.onload = function () {
     createMap();
     createChart();
@@ -27,7 +28,9 @@ L.tileLayer('https://api.mapbox.com/styles/v1/buddytheelf/ckvsqoj1h11xk14oafqc8f
 // adds the geojson data
 $.getJSON("data/MSA.geojson", function(response){
     geojson = L.geoJSON(response, {
+          style: polygonStyle,
           onEachFeature: onEachFeature
+
     }).addTo(map);
 
     info.addTo(map);
@@ -53,12 +56,12 @@ info.update = function (props) {
 //------------------------------------------------------------------------------------------------------------------
 
 
-function highlightFeature(e) {
+function hoverOn(e) {
     var layer = e.target;
 
     layer.setStyle({
         weight: 5,
-        color: '#666',
+        color: '	#66ff66',
         dashArray: '',
         fillOpacity: 0.7
     });
@@ -71,19 +74,19 @@ function highlightFeature(e) {
 }
 
 
-function resetHighlight(e) {
+function hoverOff(e) {
     geojson.resetStyle(e.target);
     info.update();
 
 }
-function zoomToFeature(e) {
+function onClick(e) {
     map.fitBounds(e.target.getBounds());
     createLine(e.target.feature.properties);
 }
 function onEachFeature(feature, layer) {
     layer.on({
-      mouseover: highlightFeature,
-      mouseout: resetHighlight,
-      click: zoomToFeature
+      mouseover: hoverOn,
+      mouseout: hoverOff,
+      click: onClick
     });
 }

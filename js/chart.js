@@ -34,7 +34,7 @@ function createChart(){
   .range([0,width]);
 
   var scale_y = d3.scaleLinear()
-  .domain([0, 100])
+  .domain([0, d3.max(data, function(d) { return +d.y; })])
   .range([height,0]);
 
   var x_axis = d3.axisBottom()
@@ -79,7 +79,7 @@ function createChart(){
   // Title
   svg.append('text')
   .attr('x', width/2 + 50)
-  .attr('y', 50)
+  .attr('y', 15)
   .attr('text-anchor', 'middle')
   .style('font-family', 'Helvetica')
   .style('font-size', 20)
@@ -97,11 +97,10 @@ function createChart(){
   // Y label
   svg.append('text')
   .attr('text-anchor', 'middle')
-  .attr('transform', 'translate(20,' + height/2 + ')rotate(-90)')
+  .attr('transform', 'translate(10,' + height/2 + ')rotate(-90)')
   .style('font-family', 'Helvetica')
   .style('font-size', 12)
   .text('% Built Up Area');
-console.log(data);
 
 };
 
