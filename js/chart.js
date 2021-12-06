@@ -1,39 +1,40 @@
 //Author Buddy Collins
 "use strict"
 
-
-var year = ["1900","1910","1920","1930","1940","1950","1960","1970","1980","1990","2000","2010"];
+var name = "Select an area from the map"
 var data =  [
-  {x:"1900", y:0.1 * 100},
-  {x:"1910", y:0.2 * 100},
-  {x:"1920", y:0.3 * 100},
-  {x:"1930", y:0.35 * 100},
-  {x:"1940", y:0.4 * 100},
-  {x:"1950", y:0.45 * 100},
-  {x:"1960", y:0.5 * 100},
-  {x:"1970", y:0.55 * 100},
-  {x:"1980", y:0.6 * 100},
-  {x:"1990", y:0.65 * 100},
-  {x:"2000", y:0.7 * 100},
-  {x:"2010", y:0.75 * 100}];
+  {"x":"1900", "y":0.1 * 100},
+  {"x":"1910", "y":0.2 * 100},
+  {"x":"1920", "y":0.3 * 100},
+  {"x":"1930", "y":0.35 * 100},
+  {"x":"1940", "y":0.4 * 100},
+  {"x":"1950", "y":0.45 * 100},
+  {"x":"1960", "y":0.5 * 100},
+  {"x":"1970", "y":0.55 * 100},
+  {"x":"1980", "y":0.6 * 100},
+  {"x":"1990", "y":0.65 * 100},
+  {"x":"2000", "y":0.7 * 100},
+  {"x":"2010", "y":1 * 100}];
 // append the svg object to the body of the page
 
 function createChart(){
-  var svg = d3.select("#chartid").append("svg:svg")
+
+  var svg = d3.select("#chartid")
+  .append("svg:svg")
   .attr("id","chartsvg")
-  .attr("width", 800)//canvasWidth)
+  .attr("width", 808)//canvasWidth)
   .attr("height", 300),//canvasHeight);
   margin = { top: 20, right: 20, bottom: 30, left: 70 },
   width = +svg.attr("width") - margin.left - margin.right,
-  height = +svg.attr("height") - margin.top - margin.bottom;
+  height = svg.attr("height") - margin.top - margin.bottom;
 
 
   var scale_x = d3.scaleBand()
-  .domain(year)
+  .domain(data.map(function(d) {return d.x}))
   .range([0,width]);
 
   var scale_y = d3.scaleLinear()
-  .domain([0,100])
+  .domain([0, 100])
   .range([height,0]);
 
   var x_axis = d3.axisBottom()
@@ -51,6 +52,16 @@ function createChart(){
   .call(x_axis);
 
 
+  svg.append('g')
+  .selectAll("dot")
+  .data(data)
+  .enter()
+  .append("circle")
+  .attr("cx", function (d) { return scale_x(d.x) } )
+  .attr("cy", function (d) { return scale_y(d.y) } )
+  .attr("r", 2)
+  .attr("transform", "translate(80,10)")
+  .style("fill", "#CC0000");
 
   svg.append("path")
   .datum(data)
@@ -58,28 +69,58 @@ function createChart(){
   .attr("stroke", "steelblue")
   .attr("stroke-width", 1.5)
   .attr("d", d3.line()
-  .x(d => data.x)
-  .y(d => data.y)
-)
+  .x(function(d) { return scale_x(d.x) })
+  .y(function(d) { return scale_y(d.y) })
+  )
+  .attr("transform", "translate(80,10)");
+
+
+
+  // Title
+  svg.append('text')
+  .attr('x', width/2 + 50)
+  .attr('y', 50)
+  .attr('text-anchor', 'middle')
+  .style('font-family', 'Helvetica')
+  .style('font-size', 20)
+  .text(name);
+
+  // X label
+  svg.append('text')
+  .attr('x', width/2 + 50)
+  .attr('y', height + 50)
+  .attr('text-anchor', 'middle')
+  .style('font-family', 'Helvetica')
+  .style('font-size', 12)
+  .text('Year');
+
+  // Y label
+  svg.append('text')
+  .attr('text-anchor', 'middle')
+  .attr('transform', 'translate(20,' + height/2 + ')rotate(-90)')
+  .style('font-family', 'Helvetica')
+  .style('font-size', 12)
+  .text('% Built Up Area');
 console.log(data);
 
 };
 
 function createLine(properties){
   d3.select("#chartsvg").remove();
+  name = properties.NAME10;
   data = [
-    {x:"1900", y:properties.F1900_mean * 100},
-    {x:"1910", y:properties.F1910_mean * 100},
-    {x:"1920", y:properties.F1920_mean * 100},
-    {x:"1930", y:properties.F1930_mean * 100},
-    {x:"1940", y:properties.F1940_mean * 100},
-    {x:"1950", y:properties.F1950_mean * 100},
-    {x:"1960", y:properties.F1960_mean * 100},
-    {x:"1970", y:properties.F1970_mean * 100},
-    {x:"1980", y:properties.F1980_mean * 100},
-    {x:"1990", y:properties.F1990_mean * 100},
-    {x:"2000", y:properties.F2000_mean * 100},
-    {x:"2010", y:properties.F2010_mean * 100}];
+    {"x":"1900", "y":properties.F1900_mean * 100},
+    {"x":"1910", "y":properties.F1910_mean * 100},
+    {"x":"1920", "y":properties.F1920_mean * 100},
+    {"x":"1930", "y":properties.F1930_mean * 100},
+    {"x":"1940", "y":properties.F1940_mean * 100},
+    {"x":"1950", "y":properties.F1950_mean * 100},
+    {"x":"1960", "y":properties.F1960_mean * 100},
+    {"x":"1970", "y":properties.F1970_mean * 100},
+    {"x":"1980", "y":properties.F1980_mean * 100},
+    {"x":"1990", "y":properties.F1990_mean * 100},
+    {"x":"2000", "y":properties.F2000_mean * 100},
+    {"x":"2010", "y":properties.F2010_mean * 100}];
     createChart();
 
 }
