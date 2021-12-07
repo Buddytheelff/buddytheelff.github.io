@@ -5,24 +5,27 @@
     display: inline-block;
     margin-left: 10%;
     margin-right: 10%;
-
+    border:1px solid black;
 
   }
 #chartid{
     float: left;
     height:375px;
-    width:35%;
+    width:40%;
     text-align: center;
     background-color: #e6e6e6;
+    padding: 10px 0px;
     margin-left: 10%;
+    border:1px solid black;
 }
 #about{
-  height:335px;
-  width:42%;
+  height:375px;
+  width:38.5%;
   background-color: #cccccc;
-  padding: 20px;
+  padding: 10px 10px;
   margin-right: 10%;
-  margin-left: 45%;
+  margin-left: 50%;
+  border:1px solid black;
 }
 #header {
   width: 80%;
@@ -30,6 +33,7 @@
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
+  border:1px solid black;
 }
 #footer {
   width: 80%;
@@ -37,6 +41,7 @@
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
+
 }
 
 .sequence-control-container {
@@ -74,4 +79,18 @@
 .info h4 {
   margin: 0 0 5px;
   color: 'black';
+}
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: auto;
+}
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

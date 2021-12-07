@@ -1,7 +1,7 @@
 //Author Buddy Collins
 "use strict"
 
-var name = "Select an area from the map"
+var name = "Click on an area from the map"
 var data =  [
   {"x":"1900", "y":0.1 * 100},
   {"x":"1910", "y":0.2 * 100},
@@ -15,27 +15,21 @@ var data =  [
   {"x":"1990", "y":0.65 * 100},
   {"x":"2000", "y":0.7 * 100},
   {"x":"2010", "y":0.75 * 100}];
+  var width = 430 -80;
+  var height = 350 -120;
 // append the svg object to the body of the page
 
 function createChart(){
-  d3.select("#chartid")
-  .append('text')
-  .attr("id","titlesvg")
-  .attr('x', width/2 + 70)
-  .attr('y', 15)
-  .attr('text-anchor', 'middle')
-  .style('font-family', 'Helvetica')
-  .style('font-size', 20)
-  .text(name);
+
+
 
   var svg = d3.select("#chartid")
   .append("svg:svg")
   .attr("id","chartsvg")
-  .attr("width", 430)//canvasWidth)
-  .attr("height", 350),//canvasHeight);
-  margin = { top: 20, right: 30, bottom: 30, left: 50 },
-  width = +svg.attr("width") - margin.left - margin.right,
-  height = svg.attr("height") - margin.top - margin.bottom;
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", "0 0 430 350")
+  .classed("svg-content", true);
+
 
 
   var scale_x = d3.scaleBand()
@@ -83,6 +77,14 @@ function createChart(){
   )
   .attr("transform", "translate(65,10)");
 
+  //title
+  svg.append('text')
+  .attr('x', width/2 + 50)
+  .attr('y', height-height+15)
+  .attr('text-anchor', 'middle')
+  .style('font-family', 'Helvetica')
+  .style('font-size', 8)
+  .text(name);
 
   // X label
   svg.append('text')
@@ -90,7 +92,7 @@ function createChart(){
   .attr('y', height + 50)
   .attr('text-anchor', 'middle')
   .style('font-family', 'Helvetica')
-  .style('font-size', 12)
+  .style('font-size', 8)
   .text('Year');
 
   // Y label
@@ -98,7 +100,7 @@ function createChart(){
   .attr('text-anchor', 'middle')
   .attr('transform', 'translate(15,' + height/2 + ')rotate(-90)')
   .style('font-family', 'Helvetica')
-  .style('font-size', 12)
+  .style('font-size', 8)
   .text('% Built Up Area');
 
 
@@ -106,7 +108,6 @@ function createChart(){
 
 function createLine(properties){
   d3.select("#chartsvg").remove();
-  d3.select("#titlesvg").remove();
   name = properties.NAME10;
   data = [
     {"x":"1900", "y":properties.F1900_mean * 100},
