@@ -2,10 +2,12 @@
 "use strict"
 var geojson;
 var map;
+var index;
 var info = L.control();
 var polygonStyle = {
   "weight": 3,
   "color": "#6699ff"};
+var year = ["1900","1910","1920","1930","1940","1950","1960","1970","1980","1990","2000","2010"];
 window.onload = function () {
     createMap();
     createChart();
@@ -34,6 +36,7 @@ $.getJSON("data/MSA.geojson", function(response){
     }).addTo(map);
 
     info.addTo(map);
+    createSlider(response);
 });
 };
 
@@ -49,11 +52,40 @@ info.onAdd = function (map) {
 //Update the info based on what state user has clicked on
 info.update = function (props) {
     this._div.innerHTML = '<h4>Built up area</h4>' + (props ?
-        '<b>' + props.NAME10 + '</b><br />' + Math.round(props.F2020_mean * 100) + '% BUA'
+        '<b>' + props.NAME10 + '</b><br />' + Math.round(props.F2020_mean * 100) + '% BUA in ' + year[index]
         : 'Hover over area');
 };
 
 //------------------------------------------------------------------------------------------------------------------
+
+function createSlider(response){
+    var Slider = L.Control.extend({
+      options: {
+          position: 'bottomleft'
+      },
+      onAdd: function () {
+        var container = L.DomUtil.create('div', 'sequence-control-container');
+          $(container).append('<input class="range-slider" type="range">');
+          L.DomEvent.disableClickPropagation(container);
+        return container;
+        }
+    });
+map.addControl(new Slider());
+
+$('.range-slider').attr({
+  max: 11,
+  min: 0,
+  value: 0,
+  step: 1
+});
+index = $('.range-slider').val();
+
+$('.range-slider').on('input', function(){
+  //Step 6: get the new index value
+  index = $(this).val();
+  });
+
+};
 
 
 function hoverOn(e) {

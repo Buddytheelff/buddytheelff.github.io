@@ -23,7 +23,7 @@ function createChart(){
   .append("svg:svg")
   .attr("id","chartsvg")
   .attr("width", 808)//canvasWidth)
-  .attr("height", 300),//canvasHeight);
+  .attr("height", 350),//canvasHeight);
   margin = { top: 20, right: 20, bottom: 30, left: 70 },
   width = +svg.attr("width") - margin.left - margin.right,
   height = svg.attr("height") - margin.top - margin.bottom;
@@ -43,12 +43,12 @@ function createChart(){
   var y_axis = d3.axisLeft()
   .scale(scale_y);
   svg.append("g")
-  .attr("transform", "translate(50, 10)")
+  .attr("transform", "translate(70, 30)")
   .call(y_axis);
 
-  var xAxisTranslate = height + 10;
+  var xAxisTranslate = height + 30;
   svg.append("g")
-  .attr("transform", "translate(50, " + xAxisTranslate  +")")
+  .attr("transform", "translate(70, " + xAxisTranslate  +")")
   .call(x_axis);
 
 
@@ -60,7 +60,7 @@ function createChart(){
   .attr("cx", function (d) { return scale_x(d.x) } )
   .attr("cy", function (d) { return scale_y(d.y) } )
   .attr("r", 2)
-  .attr("transform", "translate(80,10)")
+  .attr("transform", "translate(100,30)")
   .style("fill", "#CC0000");
 
   svg.append("path")
@@ -72,13 +72,13 @@ function createChart(){
   .x(function(d) { return scale_x(d.x) })
   .y(function(d) { return scale_y(d.y) })
   )
-  .attr("transform", "translate(80,10)");
+  .attr("transform", "translate(100,30)");
 
 
 
   // Title
   svg.append('text')
-  .attr('x', width/2 + 50)
+  .attr('x', width/2 + 70)
   .attr('y', 15)
   .attr('text-anchor', 'middle')
   .style('font-family', 'Helvetica')
@@ -87,7 +87,7 @@ function createChart(){
 
   // X label
   svg.append('text')
-  .attr('x', width/2 + 50)
+  .attr('x', width/2 + 70)
   .attr('y', height + 50)
   .attr('text-anchor', 'middle')
   .style('font-family', 'Helvetica')

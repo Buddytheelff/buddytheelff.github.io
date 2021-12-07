@@ -9,7 +9,7 @@
 
   }
 #chartid{
-    height:320px;
+    height:370px;
     width:80%;
     text-align: center;
     display:inline-block;
@@ -32,14 +32,28 @@
   margin-left: 10%;
   margin-right: 10%;
 }
+
 .sequence-control-container {
     width: 350px;
     height: 30px;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.4);
     padding: 10px;
     line-height: 45px;
     text-align: center;
     border: solid gray 1px;
+}
+
+.range-slider {
+    width: 250px;
+}
+
+.step {
+    width: 40px;
+}
+
+.step img {
+    width: 100%;
+    height: auto;
 }
 
 .info {
@@ -50,6 +64,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
+
 .info h4 {
   margin: 0 0 5px;
   color: 'black';
