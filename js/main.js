@@ -2,12 +2,13 @@
 "use strict"
 var geojson;
 var map;
-var index;
+var index = 0;
 var info = L.control();
 var polygonStyle = {
   "weight": 3,
   "color": "#6699ff"};
 var year = ["1900","1910","1920","1930","1940","1950","1960","1970","1980","1990","2000","2010"];
+var slideArr = [];
 window.onload = function () {
     createMap();
     createChart();
@@ -52,11 +53,28 @@ info.onAdd = function (map) {
 //Update the info based on what state user has clicked on
 info.update = function (props) {
     this._div.innerHTML = '<h4>Built up area</h4>' + (props ?
-        '<b>' + props.NAME10 + '</b><br />' + Math.round(props.F2020_mean * 100) + '% BUA in ' + year[index]
+        '<b>' + props.NAME10 + '</b><br />' + Math.round(slideArr[index]) + '% BUA in ' + year[index]
         : 'Hover over area');
 };
 
 //------------------------------------------------------------------------------------------------------------------
+function sliderArray(props){
+  slideArr = [
+    props.F1900_mean * 100,
+    props.F1910_mean * 100,
+    props.F1920_mean * 100,
+    props.F1930_mean * 100,
+    props.F1940_mean * 100,
+    props.F1950_mean * 100,
+    props.F1960_mean * 100,
+    props.F1970_mean * 100,
+    props.F1980_mean * 100,
+    props.F1990_mean * 100,
+    props.F2000_mean * 100,
+    props.F2010_mean * 100
+
+  ];
+};
 
 function createSlider(response){
     var Slider = L.Control.extend({
@@ -86,8 +104,7 @@ $('.range-slider').on('input', function(){
   });
 
 };
-
-
+//-----------------------------------------------------------------------------------------------------------------
 function hoverOn(e) {
     var layer = e.target;
 
@@ -102,7 +119,7 @@ function hoverOn(e) {
         layer.bringToFront();
     }
     info.update(layer.feature.properties);
-
+    sliderArray(layer.feature.properties);
 }
 
 

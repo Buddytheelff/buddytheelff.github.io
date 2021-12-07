@@ -14,7 +14,7 @@ var data =  [
   {"x":"1980", "y":0.6 * 100},
   {"x":"1990", "y":0.65 * 100},
   {"x":"2000", "y":0.7 * 100},
-  {"x":"2010", "y":1 * 100}];
+  {"x":"2010", "y":0.75 * 100}];
 // append the svg object to the body of the page
 
 function createChart(){
@@ -34,7 +34,7 @@ function createChart(){
   .range([0,width]);
 
   var scale_y = d3.scaleLinear()
-  .domain([0, d3.max(data, function(d) { return +d.y; })])
+  .domain([0, d3.max(data, function(d) { return +d.y; }) + 10])
   .range([height,0]);
 
   var x_axis = d3.axisBottom()
