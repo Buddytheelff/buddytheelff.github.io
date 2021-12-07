@@ -18,13 +18,22 @@ var data =  [
 // append the svg object to the body of the page
 
 function createChart(){
+  d3.select("#chartid")
+  .append('text')
+  .attr("id","titlesvg")
+  .attr('x', width/2 + 70)
+  .attr('y', 15)
+  .attr('text-anchor', 'middle')
+  .style('font-family', 'Helvetica')
+  .style('font-size', 20)
+  .text(name);
 
   var svg = d3.select("#chartid")
   .append("svg:svg")
   .attr("id","chartsvg")
-  .attr("width", 808)//canvasWidth)
+  .attr("width", 430)//canvasWidth)
   .attr("height", 350),//canvasHeight);
-  margin = { top: 20, right: 20, bottom: 30, left: 70 },
+  margin = { top: 20, right: 30, bottom: 30, left: 50 },
   width = +svg.attr("width") - margin.left - margin.right,
   height = svg.attr("height") - margin.top - margin.bottom;
 
@@ -43,12 +52,12 @@ function createChart(){
   var y_axis = d3.axisLeft()
   .scale(scale_y);
   svg.append("g")
-  .attr("transform", "translate(70, 30)")
+  .attr("transform", "translate(50, 10)")
   .call(y_axis);
 
-  var xAxisTranslate = height + 30;
+  var xAxisTranslate = height + 10;
   svg.append("g")
-  .attr("transform", "translate(70, " + xAxisTranslate  +")")
+  .attr("transform", "translate(50, " + xAxisTranslate  +")")
   .call(x_axis);
 
 
@@ -60,7 +69,7 @@ function createChart(){
   .attr("cx", function (d) { return scale_x(d.x) } )
   .attr("cy", function (d) { return scale_y(d.y) } )
   .attr("r", 2)
-  .attr("transform", "translate(100,30)")
+  .attr("transform", "translate(65,10)")
   .style("fill", "#CC0000");
 
   svg.append("path")
@@ -72,22 +81,12 @@ function createChart(){
   .x(function(d) { return scale_x(d.x) })
   .y(function(d) { return scale_y(d.y) })
   )
-  .attr("transform", "translate(100,30)");
+  .attr("transform", "translate(65,10)");
 
-
-
-  // Title
-  svg.append('text')
-  .attr('x', width/2 + 70)
-  .attr('y', 15)
-  .attr('text-anchor', 'middle')
-  .style('font-family', 'Helvetica')
-  .style('font-size', 20)
-  .text(name);
 
   // X label
   svg.append('text')
-  .attr('x', width/2 + 70)
+  .attr('x', width/2 + 50)
   .attr('y', height + 50)
   .attr('text-anchor', 'middle')
   .style('font-family', 'Helvetica')
@@ -97,15 +96,17 @@ function createChart(){
   // Y label
   svg.append('text')
   .attr('text-anchor', 'middle')
-  .attr('transform', 'translate(10,' + height/2 + ')rotate(-90)')
+  .attr('transform', 'translate(15,' + height/2 + ')rotate(-90)')
   .style('font-family', 'Helvetica')
   .style('font-size', 12)
   .text('% Built Up Area');
+
 
 };
 
 function createLine(properties){
   d3.select("#chartsvg").remove();
+  d3.select("#titlesvg").remove();
   name = properties.NAME10;
   data = [
     {"x":"1900", "y":properties.F1900_mean * 100},

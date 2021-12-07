@@ -9,25 +9,31 @@
 
   }
 #chartid{
-    height:370px;
-    width:80%;
+    float: left;
+    height:375px;
+    width:35%;
     text-align: center;
-    display:inline-block;
     background-color: #e6e6e6;
     margin-left: 10%;
-    margin-right: 10%;
-
+}
+#about{
+  height:335px;
+  width:42%;
+  background-color: #cccccc;
+  padding: 20px;
+  margin-right: 10%;
+  margin-left: 45%;
 }
 #header {
   width: 80%;
-  background-color: #e6e6e6;
+  background-color:  #cccccc;
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
 }
 #footer {
   width: 80%;
-  background-color: #e6e6e6;
+  background-color:  #cccccc;
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
