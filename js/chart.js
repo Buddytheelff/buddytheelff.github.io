@@ -17,10 +17,11 @@ var data =  [
   {"x":"2010", "y":0.75 * 100}];
   var width = 430 -80;
   var height = 350 -120;
+  var areasSelected = 0;
+  var chartMax = 0;
 // append the svg object to the body of the page
 
 function createChart(){
-
 
 
   var svg = d3.select("#chartid")
@@ -37,7 +38,7 @@ function createChart(){
   .range([0,width]);
 
   var scale_y = d3.scaleLinear()
-  .domain([0, d3.max(data, function(d) { return +d.y; }) + 10])
+  .domain([0, chartMax + 10])
   .range([height,0]);
 
   var x_axis = d3.axisBottom()
@@ -54,7 +55,7 @@ function createChart(){
   .attr("transform", "translate(50, " + xAxisTranslate  +")")
   .call(x_axis);
 
-
+if(areasSelected != 2){
   svg.append('g')
   .selectAll("dot")
   .data(data)
@@ -76,7 +77,7 @@ function createChart(){
   .y(function(d) { return scale_y(d.y) })
   )
   .attr("transform", "translate(65,10)");
-
+}
   //title
   svg.append('text')
   .attr('x', width/2 + 50)
@@ -107,7 +108,11 @@ function createChart(){
 };
 
 function createLine(properties){
+  if (areasSelected == 1){
   d3.select("#chartsvg").remove();
+  areasSelected = 0;
+}
+  chartMax = d3.max(data, function(d) { return +d.y; })
   name = properties.NAME10;
   data = [
     {"x":"1900", "y":properties.F1900_mean * 100},
@@ -123,5 +128,6 @@ function createLine(properties){
     {"x":"2000", "y":properties.F2000_mean * 100},
     {"x":"2010", "y":properties.F2010_mean * 100}];
     createChart();
+    areasSelected = areasSelected + 1;
 
 }

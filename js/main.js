@@ -9,6 +9,7 @@ var polygonStyle = {
   "color": "#6699ff"};
 var year = ["1900","1910","1920","1930","1940","1950","1960","1970","1980","1990","2000","2010"];
 var slideArr = [];
+var chlorArray = [];
 window.onload = function () {
     createMap();
     createChart();
@@ -31,7 +32,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/buddytheelf/ckvsqoj1h11xk14oafqc8f
 // adds the geojson data
 $.getJSON("data/MSA.geojson", function(response){
     geojson = L.geoJSON(response, {
-          style: polygonStyle,
+          style: style,
           onEachFeature: onEachFeature
 
     }).addTo(map);
@@ -57,7 +58,42 @@ info.update = function (props) {
         : 'Hover over area');
 };
 
+function getColor(d) {
+    return d > 75 ? '#8c2d04' :
+           d > 62.5  ? '#cc4c02' :
+           d > 50  ? '#ec7014' :
+           d > 37.5  ? '#fe9929' :
+           d > 25   ? '#fec44f' :
+           d > 12.5  ? '#fee391' :
+           d > 6   ? '#fff7bc' :
+                      '#ffffe5';
+}
+function style(feature) {
+  var chlorArray = [
+    feature.properties.F1900_mean * 100,
+    feature.properties.F1910_mean * 100,
+    feature.properties.F1920_mean * 100,
+    feature.properties.F1930_mean * 100,
+    feature.properties.F1940_mean * 100,
+    feature.properties.F1950_mean * 100,
+    feature.properties.F1960_mean * 100,
+    feature.properties.F1970_mean * 100,
+    feature.properties.F1980_mean * 100,
+    feature.properties.F1990_mean * 100,
+    feature.properties.F2000_mean * 100,
+    feature.properties.F2010_mean * 100
+  ];
+    return {
+        fillColor: getColor(chlorArray[index]),
+        weight: 0.5,
+        opacity: 0.8,
+        color: 'black',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
 //------------------------------------------------------------------------------------------------------------------
+
 function sliderArray(props){
   slideArr = [
     props.F1900_mean * 100,
@@ -101,9 +137,12 @@ index = $('.range-slider').val();
 $('.range-slider').on('input', function(){
   //Step 6: get the new index value
   index = $(this).val();
+  geojson.resetStyle();
   });
 
 };
+
+
 //-----------------------------------------------------------------------------------------------------------------
 function hoverOn(e) {
     var layer = e.target;
