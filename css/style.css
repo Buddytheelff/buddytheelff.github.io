@@ -16,7 +16,6 @@
     background-color: #e6e6e6;
     padding: 0px 0px;
     margin-right: 5%;
-
 }
 #about{
   clear:both;
@@ -43,14 +42,13 @@
   margin-right: 5%;
   border:1px solid black;
 }
-#footer {
+#footer{
   width: 90%;
   background-color:  #333;
   text-align: center;
   margin-left: 5%;
   margin-right: 5%;
   border:1px solid black;
-
 }
 .about {
   height:375px;
