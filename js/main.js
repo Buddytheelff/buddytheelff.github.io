@@ -76,9 +76,9 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 3.125, 6.25, 12.5, 25, 37.5, 50, 62.5],
+        grades = [0, 3, 6, 13, 25, 37, 50, 65],
         labels = [];
-    $(div).append('<div class="temporalLegend">Percentage of BUA in <span class="year">1900</span></div>')
+    $(div).append('<div class="temporalLegend">% BUA in <span class="year">1900</span></div>')
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
