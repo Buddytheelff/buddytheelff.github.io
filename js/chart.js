@@ -33,8 +33,16 @@ function createChart(){
   .append("svg:svg")
   .attr("id","chartsvg")
   .attr("preserveAspectRatio", "xMinYMin meet")
-  .attr("viewBox", "0 0 430 350")
+  .attr("viewBox", "0 0 430 390")
   .classed("svg-content", true);
+  //title
+  svg.append('text')
+  .attr('x', width/2 + 50)
+  .attr('y', height-height+20)
+  .attr('text-anchor', 'middle')
+  .style('font-family', 'Helvetica')
+  .style('font-size', 8)
+  .text(name);
 
 
 
@@ -52,10 +60,10 @@ function createChart(){
   var y_axis = d3.axisLeft()
   .scale(scale_y);
   svg.append("g")
-  .attr("transform", "translate(50, 10)")
+  .attr("transform", "translate(50, 50)")
   .call(y_axis);
 
-  var xAxisTranslate = height + 10;
+  var xAxisTranslate = height + 50;
   svg.append("g")
   .attr("transform", "translate(50, " + xAxisTranslate  +")")
   .call(x_axis);
@@ -68,8 +76,8 @@ function createChart(){
   .attr("cx", function (d) { return scale_x(d.x) } )
   .attr("cy", function (d) { return scale_y(d.y) } )
   .attr("r", 2)
-  .attr("transform", "translate(65,10)")
-  .style("fill", "#CC0000");
+  .attr("transform", "translate(65,50)")
+  .style("fill", "steelblue");
 
   svg.append("path")
   .datum(data)
@@ -80,29 +88,22 @@ function createChart(){
   .x(function(d) { return scale_x(d.x) })
   .y(function(d) { return scale_y(d.y) })
   )
-  .attr("transform", "translate(65,10)");
-  //title
-  svg.append('text')
-  .attr('x', width/2 + 50)
-  .attr('y', height-height+15)
-  .attr('text-anchor', 'middle')
-  .style('font-family', 'Helvetica')
-  .style('font-size', 8)
-  .text(name);
+  .attr("transform", "translate(65,50)");
 
   // X label
   svg.append('text')
   .attr('x', width/2 + 50)
-  .attr('y', height + 50)
+  .attr('y', height + 90)
   .attr('text-anchor', 'middle')
   .style('font-family', 'Helvetica')
   .style('font-size', 8)
   .text('Year');
 
   // Y label
+  var yAxistranslate = height/2 + 50
   svg.append('text')
   .attr('text-anchor', 'middle')
-  .attr('transform', 'translate(15,' + height/2 + ')rotate(-90)')
+  .attr('transform', 'translate(15,' + yAxistranslate + ')rotate(-90)')
   .style('font-family', 'Helvetica')
   .style('font-size', 8)
   .text('% Built Up Area');
