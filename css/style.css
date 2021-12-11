@@ -44,7 +44,15 @@
   border:1px solid black;
 
 }
+.about {
+  height:375px;
+  width:90%;
+  background-color: #cccccc;
+  padding: 20px 20px;
+  margin-right: 5%;
+  margin-left: 5%;
 
+}
 .sequence-control-container {
     width: 250px;
     height: 30px;
