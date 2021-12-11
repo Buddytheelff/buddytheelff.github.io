@@ -28,6 +28,7 @@
   border:1px solid black;
 }
 #header {
+  height:50px;
   width: 80%;
   background-color:  #cccccc;
   text-align: center;

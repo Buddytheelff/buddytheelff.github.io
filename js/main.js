@@ -8,7 +8,7 @@ var info = L.control();
 var polygonStyle = {
   "weight": 3,
   "color": "#6699ff"};
-var year = ["1900","1910","1920","1930","1940","1950","1960","1970","1980","1990","2000","2010","2020"];
+var year = ["1900","1910","1920","1930","1940","1950","1960","1970","1980","1990","2000","2010","2016"];
 var slideArr = [];
 //------------------------------------------------------------------------------------------------------------------
 window.onload = function () {
@@ -66,6 +66,7 @@ $('.range-slider').on('input', function(){
   //Step 6: get the new index value
   index = $(this).val();
   geojson.resetStyle();
+  document.getElementsByClassName('year')[0].innerHTML = year[index];
   });
 
 };
@@ -75,9 +76,9 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 3.125, 6.25, 12.5, 25, 37.5, 50,62.5],
+        grades = [0, 3.125, 6.25, 12.5, 25, 37.5, 50, 62.5],
         labels = [];
-
+    $(div).append('<div class="temporalLegend">Percentage of BUA in <span class="year">1900</span></div>')
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
