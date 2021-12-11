@@ -5,9 +5,6 @@ var geojson;
 var map;
 var index = 0;
 var info = L.control();
-var polygonStyle = {
-  "weight": 3,
-  "color": "#6699ff"};
 var year = ["1900","1910","1920","1930","1940","1950","1960","1970","1980","1990","2000","2010","2016"];
 var slideArr = [];
 //------------------------------------------------------------------------------------------------------------------
@@ -114,7 +111,7 @@ function hoverOn(e) {
 
     layer.setStyle({
         weight: 5,
-        color: '	#66ff66',
+        color: '#ffffff',
         dashArray: '',
         fillOpacity: 0.7
     });
