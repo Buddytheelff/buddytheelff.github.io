@@ -1,47 +1,49 @@
 /* Author:Buddy Collins */
 #mapid {
+    float:left;
     height: 600px;
-    width: 80%;
+    width: 55%;
     display: inline-block;
-    margin-left: 10%;
-    margin-right: 10%;
+    padding: 15px 2px;
+    margin-left: 5%;
     border:1px solid black;
 
   }
 #chartid{
-    float: left;
-    height:375px;
-    width:40%;
+    float: right;
+    height:600px;
+    width:34%;
     text-align: center;
     background-color: #e6e6e6;
-    padding: 10px 0px;
-    margin-left: 10%;
+    padding: 15px 2px;
+    margin-right: 5%;
     border:1px solid black;
 }
 #about{
+  clear:both;
   height:375px;
-  width:38.5%;
+  width:90%;
   background-color: #cccccc;
   padding: 10px 10px;
-  margin-right: 10%;
-  margin-left: 50%;
+  margin-right: 5%;
+  margin-left: 5%;
   border:1px solid black;
 }
 #header {
   height:50px;
-  width: 80%;
+  width: 90%;
   background-color:  #cccccc;
   text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   border:1px solid black;
 }
 #footer {
-  width: 80%;
+  width: 90%;
   background-color:  #cccccc;
   text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 
 }
 
@@ -92,7 +94,7 @@
 .svg-content {
     display: inline-block;
     position: absolute;
-    top: 0;
+    top: 25%;
     left: 0;
 }
 .legend {
