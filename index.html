@@ -1,81 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Urbanization</title>
-            <link rel="icon" type="image/x-icon" href="img/cubFavicon.png">
-        <!--put your external stylesheet links here-->
-        <link rel="stylesheet", href="lib/leaflet/leaflet.css">
-        <link rel="stylesheet" href="css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-main: #f4f5f7;
+      --bg-card: #ffffff;
+      --sidebar-bg: #1e2229;
+      --text-main: #2d3748;
+      --text-muted: #718096;
+      --accent: #0d9488;
+      --accent-hover: #0f766e;
+      --border-color: #e2e8f0;
+      --sidebar-width: 280px;
+    }
 
-    <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      background-image: url('img/redd-Dl_city.jpg');
-      background-size: cover;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      display: flex;
+      min-height: 100vh;
     }
-    </style>
 
-        <!--[if IE<9]>
-            <link rel="stylesheet" href="css/style.ie.css">
-        <![endif]-->
+    /* Mobile Header & Overlay */
+    .mobile-header {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--sidebar-bg);
+      color: #fff;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 1000;
+    }
 
-         <!--you can also place internal styles here;
-             place these within <style> tags-->
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 
-    </head>
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 900;
+    }
 
-    <body>
-      <div id="header">
-        <h3 style="font-family:Helvetica;font-size: 8;color:white;">Urban Research Area Identifier</h3>
-      </div>
-      <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="index.html">Map</a>
-        <a href="about.html">About</a>
-      </div>
-        <div class="row">
-          <div id="mapid"></div>
-          <div id="chartid" class="svg-container"></div>
-        </div>
-          <div id="about">
-            <div class="about">
-              <h2 style="font-family:Helvetica;color:white;">Urbanization</h2>
-              <p style="font-family:Helvetica;color:white;">
-                - Urbanization is the process of making an area more urban.
-                Built up area or BUA is one aspect used to measure this process
-               </p>
-               <p style="font-family:Helvetica;color:white;">
-                 - The BUA of metropolitan statistical areas and microtatistical areas is measured
-                 by taking the area covered by structures divided by the total available land.
-                </p>
-                <p style="font-family:Helvetica;color:white;">
-                  - In this example, the BUA for every census year from 1900 to the most recent data is displayed in the map.
-                  Just select an area from the map and view the chart on the right.
-                 </p>
-                 <p style="font-family:Helvetica;color:white;">
-                   - The scale in which this data was processed was at a 250 meter resolution.
-                  </p>
+    /* Sidebar Navigation */
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--sidebar-bg);
+      color: #fff;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      z-index: 950;
+      transition: transform 0.3s ease;
+    }
 
-            </div>
+    .profile-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #4a5568;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: #a0aec0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nav-links a {
+      color: #cbd5e0;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .social-links {
+      margin-top: auto;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: #a0aec0;
+      font-size: 1.25rem;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: var(--sidebar-width);
+      flex: 1;
+      padding: 3rem;
+      max-width: 1200px;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h1, h2, h3 {
+      color: #1a202c;
+      margin-bottom: 1rem;
+    }
+
+    /* Portfolio Cards Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-placeholder {
+      height: 180px;
+      background-color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    .card-body p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Skills Progress Bars */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-bar {
+      background-color: #e2e8f0;
+      border-radius: 4px;
+      height: 20px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      background-color: var(--accent);
+      height: 100%;
+      color: #fff;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0.5rem;
+      font-weight: bold;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 768px) {
+      .mobile-header { display: flex; }
+      .main-content { margin-left: 0; padding: 5rem 1.5rem 2rem; }
+      .sidebar {
+        transform: translateX(-100%);
+        top: 60px;
+      }
+      .sidebar.active { transform: translateX(0); }
+      .overlay.active { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-header">
+    <h3>Portfolio</h3>
+    <button class="toggle-btn" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="profile-section">
+      <div class="avatar"><i class="fa-solid fa-user"></i></div>
+      <h2>Jane Doe</h2>
+      <p style="color: #a0aec0; font-size: 0.9rem;">Web Developer</p>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#portfolio"><i class="fa-solid fa-grid-2"></i> Projects</a></li>
+      <li><a href="#about"><i class="fa-solid fa-user"></i> About Me</a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+
+    <div class="social-links">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    
+    <section id="portfolio">
+      <h1>Featured Projects</h1>
+      <div class="portfolio-grid">
+        <div class="card">
+          <div class="card-placeholder"><i class="fa-solid fa-image fa-2x"></i></div>
+          <div class="card-body">
+            <h3>Urbanization Mapping</h3>
+            <p>Spatial analysis and data visualization tracking built-up areas across metropolitan regions.</p>
           </div>
         </div>
-        <div id="footer">
-          <h2 style="font-size:18px;font-family:Helvetica;color:white;" >Urbanization Group 7</h2>
+        <div class="card">
+          <div class="card-placeholder"><i class="fa-solid fa-image fa-2x"></i></div>
+          <div class="card-body">
+            <h3>Project Two</h3>
+            <p>A concise breakdown of features and solutions engineered for this web application.</p>
+          </div>
         </div>
-        <!--put your initial page content here-->
+        <div class="card">
+          <div class="card-placeholder"><i class="fa-solid fa-image fa-2x"></i></div>
+          <div class="card-body">
+            <h3>Project Three</h3>
+            <p>Interactive dashboard interface built with lightweight components and custom CSS.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!--you can also use this space for internal scripts;
-        place these within <script> tags-->
+    <section id="about">
+      <h2>About Me</h2>
+      <p style="line-height: 1.6; margin-bottom: 1.5rem;">
+        I design and build functional, data-driven web applications. With a focus on performance, standard compliance, and clean interfaces, I help turn complex data into accessible user experiences.
+      </p>
 
-        <!--put your external script links here-->
-        <script type="text/javascript" src="lib/leaflet/leaflet-src.js"></script>
-        <script type="text/javascript" src="lib/jquery-3.6.0.js"></script>
-        <script type="text/javascript" src="lib/d3.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="js/chart.js"></script>
+      <h3>Technical Skills</h3>
+      <div class="skills-container">
+        <div>
+          <p>Frontend Development</p>
+          <div class="skill-bar"><div class="skill-progress" style="width: 90%;">90%</div></div>
+        </div>
+        <div>
+          <p>Data Visualization</p>
+          <div class="skill-bar"><div class="skill-progress" style="width: 80%;">80%</div></div>
+        </div>
+        <div>
+          <p>UI/UX Design</p>
+          <div class="skill-bar"><div class="skill-progress" style="width: 75%;">75%</div></div>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <form onsubmit="event.preventDefault();">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="form-input" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+      </form>
+    </section>
 
-    </body>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) toggleMenu();
+      });
+    });
+  </script>
+</body>
 </html>
