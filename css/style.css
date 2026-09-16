@@ -263,3 +263,16 @@ h1, h2, h3 {
   .sidebar.active { transform: translateX(0); }
   .overlay.active { display: block; }
 }
+/* Styling for inline paragraph links */
+.text-link {
+  color: var(--accent, #3182ce); /* Uses your CSS theme variable or a fallback blue */
+  text-decoration: underline;    /* Clarifies that the text is clickable */
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Hover state */
+.text-link:hover {
+  color: #2b6cb0;
+  text-decoration: none;
+}
