@@ -188,31 +188,32 @@ h1, h2, h3 {
   margin-top: 0.5rem;
 }
 
-/* Skills Progress Bars */
+/* Container for skill badges */
 .skills-container {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-wrap: wrap; /* Allows badges to flow into the next line naturally */
+  gap: 0.5rem;      /* Space between each badge */
   margin-top: 1rem;
 }
 
-.skill-bar {
-  background-color: #e2e8f0;
-  border-radius: 4px;
-  height: 20px;
-  overflow: hidden;
+/* Individual skill badge / pill */
+.skill-badge {
+  background-color: #edf2f7;      /* Light background */
+  color: #2d3748;                 /* Text color */
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;          /* Pill / Oval shape (use 6px for rounded boxes) */
+  border: 1px solid #e2e8f0;      /* Subtle border */
+  display: inline-block;
+  transition: all 0.2s ease;
 }
 
-.skill-progress {
+/* Optional hover effect */
+.skill-badge:hover {
   background-color: var(--accent);
-  height: 100%;
-  color: #fff;
-  font-size: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 0.5rem;
-  font-weight: bold;
+  color: #ffffff;
+  border-color: var(--accent);
 }
 
 /* Form Styles */
