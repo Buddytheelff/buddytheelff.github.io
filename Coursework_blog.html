@@ -43,60 +43,77 @@
     <section>
       <h1>Network Engineering Lab Reflections</h1>
       <p style="line-height: 1.6; color: var(--text-muted); margin-bottom: 2.5rem;">
-        A collection of lab objectives, architecture decisions, and technical reflections from my Master's coursework at CU Boulder.
+        A collection of lab objectives, architecture decisions, and technical reflections from my Master's coursework at CU Boulder. 
+        Current Lab work is from CSCI/CYBR 5010: Data communication by Professor Levi Perigo
       </p>
+      <!-- Enter new blog posts below here -->
+      <!-- Enter new blog posts below here -->
 
-      <!-- Blog Entry 1 -->
-      <article class="blog-post">
-        <h2>Lab 01: Enterprise Network Architecture Design</h2>
+
+
+    <!-- Blog Entry 2 _______________________________________________________________________-->
+    <article class="blog-post">
+        <h2>Lab 2: IP addressing and subnetting</h2>
         <div class="post-meta">
-          <span><i class="fa-regular fa-calendar"></i> October 12, 2026</span>
-          <span><i class="fa-solid fa-tag"></i> Network Architecture</span>
+            <span><i class="fa-regular fa-calendar"></i> September 14, 2026</span>
+            <span><i class="fa-solid fa-tag"></i> Automation</span>
         </div>
 
         <div class="skills-container" style="margin-bottom: 1.5rem;">
-          <span class="skill-badge">OSPF</span>
-          <span class="skill-badge">BGP</span>
-          <span class="skill-badge">VLAN Topology</span>
+            <span class="skill-badge">IPv4/IPv6</span>
+            <span class="skill-badge">Subnetting</span>
+            <span class="skill-badge">Cisco</span>
         </div>
 
         <div class="blog-content">
-          <h3>Objective</h3>
-          <p>
-            Design and simulate a multi-site enterprise redundant network backbone utilizing OSPF for internal routing and BGP for external internet gateway communication.
-          </p>
+            <h3>Objective</h3>
+            <p>
+            "This lab is intended to be an overview of IP addressing, the two formats in which IP addresses can be represented (IPv4 and IPv6) and the difference between public and private IP addresses."
+            </p>
 
-          <h3>Reflections & Key Takeaways</h3>
-          <p>
-            Configuring failover path prioritization highlighted how subtle differences in cost metrics can cause asymmetric routing issues. Adjusting timer values on neighbors significantly reduced convergence time without overburdening CPU cycles on edge routers.
-          </p>
+            <h3>Reflections & Key Takeaways</h3>
+            <p>
+            I found this lab challenging because it was my first experience subnetting. When we subnetted a network "efficiently", I found that using variable length subnet masks was the best method. 
+            IPv6 doesn't seem so challenging at the moment and I am excited to learn more. 
+            I also decided that I need to read this chapter again, maybe the recommended readings and probably watch some more class videos. 
+            Since I updated this practice problems using AI was the way to go. If only I could think of a good AI prompt for linux practice.
+            </p>
         </div>
       </article>
 
-      <!-- Blog Entry 2 -->
+      <!-- Blog Entry 1 _________________________________________________________________________ -->
       <article class="blog-post">
-        <h2>Lab 02: Network Automation with Python</h2>
+        <h2>Lab 1: Intro to Cisco and Spanning tree protocol or STP</h2>
         <div class="post-meta">
-          <span><i class="fa-regular fa-calendar"></i> November 01, 2026</span>
-          <span><i class="fa-solid fa-tag"></i> Automation</span>
+          <span><i class="fa-regular fa-calendar"></i> September 7, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Network Fundamentals</span>
         </div>
 
         <div class="skills-container" style="margin-bottom: 1.5rem;">
-          <span class="skill-badge">Python</span>
-          <span class="skill-badge">Netmiko</span>
-          <span class="skill-badge">REST API</span>
+          <span class="skill-badge">STP</span>
+          <span class="skill-badge">Cisco</span>
         </div>
 
         <div class="blog-content">
-          <h3>Objective</h3>
-          <p>
-            Develop scripts to automate VLAN creation and port allocation across multi-vendor switches using Netmiko and Paramiko libraries.
-          </p>
+            <h3>Objective</h3>
+            <p>
+            "This lab will provide an introduction to Cisco IOS, and how to use the Command Line Interface (CLI). This lab is intended to be an overview of Cisco IOS, and switching technology - STP"
+            Learn how to perform basic switch configuration & troubleshooting including:
+            - switch password assignment and IOS nagivation
+            - How to Activate/deactivate a port
+            - How to change the speed and dulex of a port
+            - How to verify the MAC address of computers connected to a specific port
+            Review the usage of Spanning Tree Protocol (STP) including how switching environments behave regarding:
+            - network failure
+            - network loops
+            </p>
 
-          <h3>Reflections & Key Takeaways</h3>
-          <p>
-            Transitioning from manual CLI updates to script-driven deployment reduces human error during large rollout windows. Writing robust exception handling for SSH timeouts proved critical during testing.
-          </p>
+            <h3>Reflections & Key Takeaways</h3>
+            <p>
+            This lab was a bit challenging becuase most of my experience with CLI comes from other Linux platforms like RouterOS and Junos OS.
+            I also learned that STP is an effective tool in elminating loops within the network but can come at a cost. 
+            I am excited to learn more about STP and maybe ways that we can mitigate the issues that stem from its useage in a network.
+            </p>
         </div>
       </article>
 

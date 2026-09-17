@@ -1,0 +1,23 @@
+      <!-- Blog Entry 1 _________________________________________________________________________ -->
+      <article class="blog-post">
+        <h2>Lab 1: Intro to Cisco and Spanning tree protocol or STP</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> September 7, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Network Fundamentals</span>
+        </div>
+
+        <div class="skills-container" style="margin-bottom: 1.5rem;">
+          <span class="skill-badge">STP</span>
+          <span class="skill-badge">Cisco</span>
+        </div>
+
+        <div class="blog-content">
+            <h3>Objective</h3>
+            <p>
+            </p>
+
+            <h3>Reflections & Key Takeaways</h3>
+            <p>
+            </p>
+        </div>
+      </article>
