@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coursework Blog | Buddy Collins</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="mobile-header">
+    <h3>Portfolio</h3>
+    <button class="toggle-btn" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="profile-section">
+      <img src="img/Buddy_Photo.jpeg" alt="Buddy Collins" class="profile-avatar">
+      <h2>Buddy Collins</h2>
+      <p style="color: #a0aec0; font-size: 0.9rem;">Network Engineer</p>
+      <p style="color: #a0aec0; font-size: 0.7rem;">National Center for Atmospheric Research</p>
+      <p style="color: #a0aec0; font-size: 0.7rem;">MS Network Engineering Candidate</p>
+      <p style="color: #a0aec0; font-size: 0.7rem;">University of Colorado</p>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html#portfolio"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a></li>
+      <li><a href="resume.html"><i class="fa-solid fa-file"></i> Resume</a></li>
+      <li><a href="index.html#about"><i class="fa-solid fa-user"></i> About Me</a></li>
+      <li><a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/buddy-collins-a98036180"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/Buddytheelff"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <section>
+      <h1>Network Engineering Lab Reflections</h1>
+      <p style="line-height: 1.6; color: var(--text-muted); margin-bottom: 2.5rem;">
+        A collection of lab objectives, architecture decisions, and technical reflections from my Master's coursework at CU Boulder.
+      </p>
+
+      <!-- Blog Entry 1 -->
+      <article class="blog-post">
+        <h2>Lab 01: Enterprise Network Architecture Design</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> October 12, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Network Architecture</span>
+        </div>
+
+        <div class="skills-container" style="margin-bottom: 1.5rem;">
+          <span class="skill-badge">OSPF</span>
+          <span class="skill-badge">BGP</span>
+          <span class="skill-badge">VLAN Topology</span>
+        </div>
+
+        <div class="blog-content">
+          <h3>Objective</h3>
+          <p>
+            Design and simulate a multi-site enterprise redundant network backbone utilizing OSPF for internal routing and BGP for external internet gateway communication.
+          </p>
+
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            Configuring failover path prioritization highlighted how subtle differences in cost metrics can cause asymmetric routing issues. Adjusting timer values on neighbors significantly reduced convergence time without overburdening CPU cycles on edge routers.
+          </p>
+        </div>
+      </article>
+
+      <!-- Blog Entry 2 -->
+      <article class="blog-post">
+        <h2>Lab 02: Network Automation with Python</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> November 01, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Automation</span>
+        </div>
+
+        <div class="skills-container" style="margin-bottom: 1.5rem;">
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">Netmiko</span>
+          <span class="skill-badge">REST API</span>
+        </div>
+
+        <div class="blog-content">
+          <h3>Objective</h3>
+          <p>
+            Develop scripts to automate VLAN creation and port allocation across multi-vendor switches using Netmiko and Paramiko libraries.
+          </p>
+
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            Transitioning from manual CLI updates to script-driven deployment reduces human error during large rollout windows. Writing robust exception handling for SSH timeouts proved critical during testing.
+          </p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+  </script>
+</body>
+</html>

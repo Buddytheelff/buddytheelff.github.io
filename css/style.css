@@ -293,4 +293,24 @@ h1, h2, h3 {
   object-fit: cover;    /* Prevents image distortion */
   display: block;
   margin: 0 auto 1rem;  /* Centers the photo and adds space below */
+}.blog-post {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-color);
+}.blog-post:last-child {
+      border-bottom: none;
+}.post-meta {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+}.blog-content p {
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+}.blog-content h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
 }
