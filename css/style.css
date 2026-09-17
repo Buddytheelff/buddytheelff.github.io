@@ -287,8 +287,8 @@ h1, h2, h3 {
 
 /* for profile picture keeps it round */
 }.profile-avatar {
-  width: 100px;         /* Adjust avatar size as needed */
-  height: 100px;
+  width: 150px;         /* Adjust avatar size as needed */
+  height: 150px;
   border-radius: 50%;   /* Makes the photo perfectly circular */
   object-fit: cover;    /* Prevents image distortion */
   display: block;
