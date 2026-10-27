@@ -142,7 +142,9 @@ section {
   margin-bottom: 4rem;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #1a202c;
   margin-bottom: 1rem;
 }
@@ -160,7 +162,7 @@ h1, h2, h3 {
   border-radius: 8px;
   border: 1px solid var(--border-color);
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -172,8 +174,10 @@ h1, h2, h3 {
 .card-image {
   width: 100%;
   height: 200px;
-  object-fit: contain; /* Shows full image; adds letterboxing/blank space if ratio doesn't match */
-  background-color: #f7fafc; /* Optional: adds a neutral background behind padded spaces */
+  object-fit: contain;
+  /* Shows full image; adds letterboxing/blank space if ratio doesn't match */
+  background-color: #f7fafc;
+  /* Optional: adds a neutral background behind padded spaces */
   display: block;
 }
 
@@ -199,20 +203,26 @@ h1, h2, h3 {
 /* Container for skill badges */
 .skills-container {
   display: flex;
-  flex-wrap: wrap; /* Allows badges to flow into the next line naturally */
-  gap: 0.5rem;      /* Space between each badge */
+  flex-wrap: wrap;
+  /* Allows badges to flow into the next line naturally */
+  gap: 0.5rem;
+  /* Space between each badge */
   margin-top: 1rem;
 }
 
 /* Individual skill badge / pill */
 .skill-badge {
-  background-color: #edf2f7;      /* Light background */
-  color: #2d3748;                 /* Text color */
+  background-color: #edf2f7;
+  /* Light background */
+  color: #2d3748;
+  /* Text color */
   font-size: 0.85rem;
   font-weight: 500;
   padding: 0.4rem 0.8rem;
-  border-radius: 9999px;          /* Pill / Oval shape (use 6px for rounded boxes) */
-  border: 1px solid #e2e8f0;      /* Subtle border */
+  border-radius: 9999px;
+  /* Pill / Oval shape (use 6px for rounded boxes) */
+  border: 1px solid #e2e8f0;
+  /* Subtle border */
   display: inline-block;
   transition: all 0.2s ease;
 }
@@ -262,19 +272,35 @@ h1, h2, h3 {
 
 /* Responsive Breakpoints */
 @media (max-width: 768px) {
-  .mobile-header { display: flex; }
-  .main-content { margin-left: 0; padding: 5rem 1.5rem 2rem; }
+  .mobile-header {
+    display: flex;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 5rem 1.5rem 2rem;
+  }
+
   .sidebar {
     transform: translateX(-100%);
     top: 60px;
   }
-  .sidebar.active { transform: translateX(0); }
-  .overlay.active { display: block; }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .overlay.active {
+    display: block;
+  }
 }
+
 /* Styling for inline paragraph links */
 .text-link {
-  color: var(--accent, #3182ce); /* Uses your CSS theme variable or a fallback blue */
-  text-decoration: underline;    /* Clarifies that the text is clickable */
+  color: var(--accent, #3182ce);
+  /* Uses your CSS theme variable or a fallback blue */
+  text-decoration: underline;
+  /* Clarifies that the text is clickable */
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -285,32 +311,188 @@ h1, h2, h3 {
   text-decoration: none;
 
 
-/* for profile picture keeps it round */
-}.profile-avatar {
-  width: 150px;         /* Adjust avatar size as needed */
+  /* for profile picture keeps it round */
+}
+
+.profile-avatar {
+  width: 150px;
+  /* Adjust avatar size as needed */
   height: 150px;
-  border-radius: 50%;   /* Makes the photo perfectly circular */
-  object-fit: cover;    /* Prevents image distortion */
+  border-radius: 50%;
+  /* Makes the photo perfectly circular */
+  object-fit: cover;
+  /* Prevents image distortion */
   display: block;
-  margin: 0 auto 1rem;  /* Centers the photo and adds space below */
-}.blog-post {
-      margin-bottom: 3.5rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--border-color);
-}.blog-post:last-child {
-      border-bottom: none;
-}.post-meta {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-}.blog-content p {
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-      color: var(--text-main);
-}.blog-content h3 {
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
+  margin: 0 auto 1rem;
+  /* Centers the photo and adds space below */
+}
+
+.blog-post {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.blog-post:last-child {
+  border-bottom: none;
+}
+
+.post-meta {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.blog-content p {
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  color: var(--text-main);
+}
+
+.blog-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+:root {
+  --bg-main: #f4f5f7;
+  --bg-card: #fff;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --accent: #0d9488;
+  --border-color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+h1,
+h3 {
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.page-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-top h1 {
+  margin-bottom: 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .02);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #f7fafc;
+  display: block;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-body h3 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin-bottom: .5rem;
+}
+
+.card-body p {
+  color: var(--text-muted);
+  font-size: .9rem;
+  line-height: 1.55;
+  margin-top: .5rem;
+}
+
+.text-link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  color: #0f766e;
+  text-decoration: none;
+}
+
+.back {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: .95rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+@media (max-width:768px) {
+  .main-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .page-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
 }

@@ -1,0 +1,59 @@
+2026-10-06 13:27:08.448 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 13:27:08.449 | CRITICAL | __main__:main:107 - failure
+2026-10-06 13:30:23.629 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 13:30:23.630 | CRITICAL | __main__:main:108 - failure
+2026-10-06 13:31:07.260 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 13:31:07.260 | SUCCESS  | __main__:main:103 - Success!
+2026-10-06 13:31:07.261 | INFO     | __main__:main:104 - No dates available
+2026-10-06 13:31:55.401 | INFO     | __main__:main:99 - Website successfully obtained information
+2026-10-06 13:57:45.300 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 13:57:45.305 | SUCCESS  | __main__:main:104 - Success!
+2026-10-06 14:05:26.514 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:05:26.517 | SUCCESS  | __main__:main:108 - Success!
+2026-10-06 14:07:57.941 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:07:57.942 | CRITICAL | __main__:main:114 - failure
+2026-10-06 14:09:19.513 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:09:19.515 | SUCCESS  | __main__:main:111 - Success!
+2026-10-06 14:14:09.720 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:14:09.722 | SUCCESS  | __main__:main:112 - Success!
+2026-10-06 14:15:04.270 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:15:04.271 | SUCCESS  | __main__:main:112 - Success!
+2026-10-06 14:15:50.773 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:15:50.775 | SUCCESS  | __main__:main:112 - Success!
+2026-10-06 14:16:54.959 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:16:55.351 | SUCCESS  | __main__:main:111 - Success!
+2026-10-06 14:17:40.821 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:17:41.103 | SUCCESS  | __main__:main:110 - Success!
+2026-10-06 14:18:24.742 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:18:24.949 | SUCCESS  | __main__:main:110 - Success!
+2026-10-06 14:19:55.892 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:19:56.115 | SUCCESS  | __main__:main:110 - Success!
+2026-10-06 14:20:14.690 | INFO     | __main__:main:100 - Website successfully obtained information
+2026-10-06 14:20:14.939 | SUCCESS  | __main__:main:110 - Success!
+2026-10-06 14:39:33.570 | INFO     | __main__:main:91 - Website successfully obtained information
+2026-10-06 14:39:33.762 | SUCCESS  | __main__:main:101 - Success!
+2026-10-06 14:41:00.505 | CRITICAL | __main__:main:106 - failure
+2026-10-06 14:42:43.140 | INFO     | __main__:main:91 - Website successfully obtained information
+2026-10-06 14:42:43.481 | INFO     | __main__:discord_message:43 - message sent to discord
+2026-10-06 14:42:43.483 | SUCCESS  | __main__:main:101 - Success!
+2026-10-06 14:44:40.971 | CRITICAL | __main__:main:106 - failure
+2026-10-06 14:44:44.069 | INFO     | __main__:main:91 - Website successfully obtained information
+2026-10-06 14:44:44.253 | INFO     | __main__:discord_message:43 - message sent to discord
+2026-10-06 14:44:44.257 | SUCCESS  | __main__:main:101 - Success!
+2026-10-06 14:45:49.359 | CRITICAL | __main__:main:106 - failure
+2026-10-06 14:45:52.201 | INFO     | __main__:main:91 - Website successfully obtained information
+2026-10-06 14:45:52.373 | INFO     | __main__:discord_message:43 - message sent to discord
+2026-10-06 14:45:52.375 | SUCCESS  | __main__:main:101 - Success!
+2026-10-06 14:46:04.390 | CRITICAL | __main__:main:106 - failure
+2026-10-06 15:08:32.908 | INFO     | __main__:main:88 - Website successfully obtained information
+2026-10-06 15:08:33.199 | INFO     | __main__:discord_message:39 - message sent to discord
+2026-10-06 15:08:33.201 | SUCCESS  | __main__:main:98 - Success!
+2026-10-06 15:09:03.276 | INFO     | __main__:main:88 - Website successfully obtained information
+2026-10-06 15:09:04.553 | INFO     | __main__:discord_message:39 - message sent to discord
+2026-10-06 15:09:04.556 | SUCCESS  | __main__:main:98 - Success!
+2026-10-06 15:09:34.692 | INFO     | __main__:main:88 - Website successfully obtained information
+2026-10-06 15:09:35.200 | INFO     | __main__:discord_message:39 - message sent to discord
+2026-10-06 15:09:35.202 | SUCCESS  | __main__:main:98 - Success!
+2026-10-06 15:10:05.292 | INFO     | __main__:main:88 - Website successfully obtained information
+2026-10-06 15:10:05.674 | INFO     | __main__:discord_message:39 - message sent to discord
+2026-10-06 15:10:05.676 | SUCCESS  | __main__:main:98 - Success!

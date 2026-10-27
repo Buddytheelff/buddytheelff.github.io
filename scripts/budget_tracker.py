@@ -20,15 +20,15 @@ def main():
     endDate = datetime.strptime(args.endDate, "%Y-%m-%d").date()
     nextPay = datetime.strptime(args.lastPayday, "%Y-%m-%d").date()
 
-    # Example numbers only. Replace with your own monthly bills and income.
-    bills = {
-        1: [1250, 65, 40],   # rent, internet, utilities
-        5: 275,              # loan payment
-        15: [120],           # insurance
-        20: 100,             # recurring expense
-        30: [60, 75]         # subscriptions and savings transfer
-    }
-    pay = 2000  # example biweekly take-home pay
+    bills = {1: [1730, 56, 27], #rent, xfinity Tiaa1, capitol one, groceries optional
+             5: 1066, # sofi
+             15: [225], # Tiaa2, amex
+             20: 200, # chase 
+             30: [80, 159] # best buy, student loans negative is katies portion of rent
+             }
+    #this pay is before October 2026 raise of 2.5%
+    pay = 2301
+
 
     checkin = int(input("How many days between checks: "))# allows me to enter the number of days between balance check ins
     spendOpt = int(input("Large purchase? Enter 0 for no. Enter amount of purchase: "))
@@ -48,7 +48,7 @@ def main():
             if type(bills[current_date.day]) == int:
                 balance = balance - bills[current_date.day]
             else:
-                for i in bills[current_date.day]: #i is the value assosiated with the key like a sample amount 
+                for i in bills[current_date.day]: #i is the value assosiated with the key like 1730 
                     balance = balance - i
         if balance < 1000.0:
             print(f"Warning the balance fell below 1000 on {current_date}. Current balance {balance}")

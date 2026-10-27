@@ -30,17 +30,17 @@ class bulldog(Dog):
 
 
 def main():
-    names = ["Miles", "Rover", "Jack"]
+    names = ["Miles", "Buddy", "Jack"]
 
     miles = jackRussellTerrier("Miles", 3)
-    rover = dachshund("Rover", 3)
+    buddy = dachshund("Buddy", 3)
     jack = bulldog("Jack", 3)
     jim = bulldog("Jim", 3)
 
     jim.speak("Woof")
 
     # I thoughht that the different sub classes would trip up the __eq__ it doesn't
-    print(rover == miles)
+    print(buddy == miles)
     print(jack == jim)
     print(jack == jack)
     # poor miles has to be deleted for science

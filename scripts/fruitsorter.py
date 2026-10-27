@@ -1,4 +1,4 @@
-# Student coursework example
+#Buddy Collins
 #Network Programming
 #Lab 4 Fruit sorter
 
