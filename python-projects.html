@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A collection of Python coursework projects, including network automation, data visualization and programming fundamentals.">
+  <title>Python Projects</title>
+  <style>
+:root { --bg-main: #f4f5f7; --bg-card:#fff; --text-main:#2d3748; --text-muted:#718096; --accent:#0d9488; --border-color:#e2e8f0; }
+* {box-sizing:border-box; margin:0; padding:0;}
+body {font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;}
+.main-content {max-width:1200px;margin:0 auto;padding:3rem;}
+h1,h3 {color:#1a202c;margin-bottom:1rem;}
+.page-top {display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;}
+.page-top h1 {margin-bottom:0;}
+.portfolio-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:1.5rem;}
+.card {background-color:var(--bg-card);border-radius:8px;border:1px solid var(--border-color);overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.02);transition:transform .2s,box-shadow .2s;}
+.card:hover {transform:translateY(-4px);box-shadow:0 10px 15px -3px rgba(0,0,0,.1);}
+.card-image {width:100%;height:200px;object-fit:contain;background-color:#f7fafc;display:block;}
+.card-body {padding:1.25rem;}
+.card-body h3 {font-size:1.15rem;line-height:1.3;margin-bottom:.5rem;}
+.card-body p {color:var(--text-muted);font-size:.9rem;line-height:1.55;margin-top:.5rem;}
+.text-link {color:var(--accent);text-decoration:underline;font-weight:500;}
+.text-link:hover {color:#0f766e;text-decoration:none;}
+.back {color:var(--accent);text-decoration:none;font-size:.95rem;font-weight:500;white-space:nowrap;}
+.back:hover {text-decoration:underline;}
+@media (max-width:768px) {.main-content {padding:2rem 1.5rem;}.page-top {align-items:flex-start;flex-direction:column;}.portfolio-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));}}
+@media (prefers-reduced-motion:reduce) {.card {transition:none;}.card:hover {transform:none;}}
+</style>
+</head>
+<body>
+  <main class="main-content">
+    <div class="page-top">
+      <h1>Python Projects</h1>
+      <a href="index.html#portfolio" class="back">&larr; Back to portfolio</a>
+    </div>
+    <div class="portfolio-grid">
+      <!-- Permit Availability Monitor -->
+      <div class="card">
+        <img src="img/permit.svg" alt="Illustration representing Permit Availability Monitor" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Permit Availability Monitor</h3>
+          <p>Checks campsite and permit availability using an API and prepares Discord notifications. <a href="scripts/Milestone1.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Network Configuration Tool -->
+      <div class="card">
+        <img src="img/network.svg" alt="Illustration representing Network Configuration Tool" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Network Configuration Tool</h3>
+          <p>Connects to lab network devices and configures router interfaces with Netmiko. <a href="scripts/a14.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- File Encryption Utility -->
+      <div class="card">
+        <img src="img/encrypt.svg" alt="Illustration representing File Encryption Utility" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>File Encryption Utility</h3>
+          <p>Encrypts and decrypts files using symmetric encryption and command-line options. <a href="scripts/a7_1.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Website Directory Scraper -->
+      <div class="card">
+        <img src="img/scrape.svg" alt="Illustration representing Website Directory Scraper" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Website Directory Scraper</h3>
+          <p>Collects information from web pages and exports it into a CSV file. <a href="scripts/a10_2.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Budget Forecast Simulator -->
+      <div class="card">
+        <img src="img/budget.svg" alt="Illustration representing Budget Forecast Simulator" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Budget Forecast Simulator</h3>
+          <p>Projects future account balances using sample income and recurring expenses. <a href="scripts/budget_tracker.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Price Tracking and Charting -->
+      <div class="card">
+        <img src="img/price.svg" alt="Illustration representing Price Tracking and Charting" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Price Tracking and Charting</h3>
+          <p>Records sample online prices and plots changes over time. <a href="scripts/a9_1.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 1</a> &middot; <a href="scripts/a9_2.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 2</a></p>
+        </div>
+      </div>
+      <!-- State Population Visualization -->
+      <div class="card">
+        <img src="img/population.svg" alt="Illustration representing State Population Visualization" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>State Population Visualization</h3>
+          <p>Uses Pandas and Plotly to chart population data from a CSV file. <a href="scripts/a8_2.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Vehicle Theft Data Chart -->
+      <div class="card">
+        <img src="img/vehicles.svg" alt="Illustration representing Vehicle Theft Data Chart" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Vehicle Theft Data Chart</h3>
+          <p>Creates a horizontal bar chart from a vehicle theft dataset using Matplotlib. <a href="scripts/a8_1.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Doubly Linked Playlist -->
+      <div class="card">
+        <img src="img/playlist.svg" alt="Illustration representing Doubly Linked Playlist" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Doubly Linked Playlist</h3>
+          <p>Implements a circular doubly linked list for navigating a music playlist. <a href="scripts/a13.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Python Class Inheritance -->
+      <div class="card">
+        <img src="img/inheritance.svg" alt="Illustration representing Python Class Inheritance" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Python Class Inheritance</h3>
+          <p>Explores subclasses, method overrides, and object comparisons. <a href="scripts/a12_1.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Object-Oriented Menu Builder -->
+      <div class="card">
+        <img src="img/hotdog.svg" alt="Illustration representing Object-Oriented Menu Builder" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Object-Oriented Menu Builder</h3>
+          <p>Models a customizable food order using classes, methods, and object state. <a href="scripts/a12_2.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Command-Line Dice Roller -->
+      <div class="card">
+        <img src="img/dice.svg" alt="Illustration representing Command-Line Dice Roller" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Command-Line Dice Roller</h3>
+          <p>Simulates dice rolls using user-supplied arguments and random numbers. <a href="scripts/a5_2.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 1</a> &middot; <a href="scripts/Diceroller.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 2</a></p>
+        </div>
+      </div>
+      <!-- Fruit Inventory Dictionary -->
+      <div class="card">
+        <img src="img/inventory.svg" alt="Illustration representing Fruit Inventory Dictionary" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Fruit Inventory Dictionary</h3>
+          <p>Builds an inventory dictionary from lists and generated quantities. <a href="scripts/a6_1.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Reusable Python Modules -->
+      <div class="card">
+        <img src="img/modules.svg" alt="Illustration representing Reusable Python Modules" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Reusable Python Modules</h3>
+          <p>Demonstrates importing functions and sharing arguments across Python files. <a href="scripts/a6_2a.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 1</a> &middot; <a href="scripts/a6_2b.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 2</a></p>
+        </div>
+      </div>
+      <!-- Timed Command-Line Prompts -->
+      <div class="card">
+        <img src="img/timer.svg" alt="Illustration representing Timed Command-Line Prompts" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Timed Command-Line Prompts</h3>
+          <p>Combines time calculations and repeated prompts in a terminal program. <a href="scripts/a5_1.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Fruit Sorting and Palindromes -->
+      <div class="card">
+        <img src="img/sorting.svg" alt="Illustration representing Fruit Sorting and Palindromes" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Fruit Sorting and Palindromes</h3>
+          <p>Sorts a list of fruit and checks whether user-provided text is a palindrome. <a href="scripts/fruitlab_a4.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 1</a> &middot; <a href="scripts/fruitsorter.py" target="_blank" rel="noopener noreferrer" class="text-link">View script 2</a></p>
+        </div>
+      </div>
+      <!-- Magic 8-Ball Simulator -->
+      <div class="card">
+        <img src="img/eightball.svg" alt="Illustration representing Magic 8-Ball Simulator" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Magic 8-Ball Simulator</h3>
+          <p>Selects a random answer from a list of possible responses. <a href="scripts/8ball_lab.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Introductory Python Loops -->
+      <div class="card">
+        <img src="img/hello.svg" alt="Illustration representing Introductory Python Loops" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Introductory Python Loops</h3>
+          <p>Demonstrates basic Python output and simple for and while loops. <a href="scripts/Hello.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+      <!-- Python Coursework Template -->
+      <div class="card">
+        <img src="img/server.svg" alt="Illustration representing Python Coursework Template" class="card-image" loading="lazy">
+        <div class="card-body">
+          <h3>Python Coursework Template</h3>
+          <p>Explores classes, command-line arguments, and reading from a text file. <a href="scripts/HWtemplate.py" target="_blank" rel="noopener noreferrer" class="text-link">View script</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
