@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <div class="mobile-header">
@@ -43,41 +45,178 @@
     <section>
       <h1>Network Engineering Lab Reflections</h1>
       <p style="line-height: 1.6; color: var(--text-muted); margin-bottom: 2.5rem;">
-        A collection of lab objectives, architecture decisions, and technical reflections from my Master's coursework at CU Boulder. 
+        A collection of lab objectives, architecture decisions, and technical reflections from my Master's coursework at
+        CU Boulder.
         Current Lab work is from CSCI/CYBR 5010: Data communication by Professor Levi Perigo
       </p>
       <!-- Enter new blog posts below here -->
       <!-- Enter new blog posts below here -->
-
-
-
-    <!-- Blog Entry 2 _______________________________________________________________________-->
-    <article class="blog-post">
-        <h2>Lab 2: IP addressing and subnetting</h2>
+      <!-- Blog Entry 6: Network Automation ________________________________________________ -->
+      <article class="blog-post">
+        <h2>Network Automation: Python CLI & Remote Device Configuration</h2>
         <div class="post-meta">
-            <span><i class="fa-regular fa-calendar"></i> September 14, 2026</span>
-            <span><i class="fa-solid fa-tag"></i>IP addressing</span>
+          <span><i class="fa-regular fa-calendar"></i> October 23, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Network Automation</span>
         </div>
 
         <div class="skills-container" style="margin-bottom: 1.5rem;">
-            <span class="skill-badge">IPv4/IPv6</span>
-            <span class="skill-badge">Subnetting</span>
-            <span class="skill-badge">Cisco</span>
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">Netmiko</span>
+          <span class="skill-badge">SSHv2</span>
+          <span class="skill-badge">GNS3</span>
+          <span class="skill-badge">Linux</span>
         </div>
 
         <div class="blog-content">
-            <h3>Objective</h3>
-            <p>
-            "This lab is intended to be an overview of IP addressing, the two formats in which IP addresses can be represented (IPv4 and IPv6) and the difference between public and private IP addresses."
-            </p>
+          <h3>Objective</h3>
+          <p>
+            Learn how to accept user input and remotely access and configure network devices using Python automation
+            libraries, simulating a scalable deployment to reduce manual CLI overhead[cite: 8].
+          </p>
 
-            <h3>Reflections & Key Takeaways</h3>
-            <p>
-            I found this lab challenging because it was my first experience subnetting. When we subnetted a network "efficiently", I found that using variable length subnet masks was the best method. 
-            IPv6 doesn't seem so challenging at the moment and I am excited to learn more. 
-            I also decided that I need to read this chapter again, maybe the recommended readings and probably watch some more class videos. 
-            Since I updated this practice problems using AI was the way to go. If only I could think of a good AI prompt for linux practice.
-            </p>
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            Writing this Python tool with argparse and Netmiko really drove home how tedious manual configuration can be
+            when you scale beyond a single device[cite: 8]. I learned quickly that managing command timing and buffer
+            delays is essential when saving running configs over SSH so connections don't time out[cite: 8]. For next
+            steps, I'd definitely want to refactor the script to ingest target host configs from structured YAML or JSON
+            files rather than manual prompts[cite: 8].
+          </p>
+        </div>
+      </article>
+
+      <!-- Blog Entry 5: Wireshark & Packet Analysis _________________________________________ -->
+      <article class="blog-post">
+        <h2>Lab 6: Packet Analysis & Deep Inspection with Wireshark</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> October 16, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Packet Analysis</span>
+        </div>
+
+        <div class="skills-container" style="margin-bottom: 1.5rem;">
+          <span class="skill-badge">Wireshark</span>
+          <span class="skill-badge">TCP/IP</span>
+          <span class="skill-badge">HTTP</span>
+          <span class="skill-badge">ICMP</span>
+          <span class="skill-badge">Python</span>
+        </div>
+
+        <div class="blog-content">
+          <h3>Objective</h3>
+          <p>
+            Observe and analyze network protocol operations in action across link, internet, and application layers,
+            utilizing packet filters, custom profiles, continuous ring buffers, and Python pcap parsing[cite: 7].
+          </p>
+
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            Seeing the TCP three-way handshake and HTTP requests dissected down to the byte level made abstract
+            transport concepts much more concrete[cite: 7]. Building dedicated Wireshark profiles and coloring rules
+            showed me how much faster troubleshooting becomes when you strip away normal background traffic[cite: 7].
+            Writing the small Python script to pull source and destination IPs straight out of a raw .pcap file was also
+            a great exercise in packet-level inspection[cite: 7].
+          </p>
+        </div>
+      </article>
+
+      <!-- Blog Entry 4: Routing & Failover __________________________________________________ -->
+      <article class="blog-post">
+        <h2>Lab 5: Static and Dynamic Routing (OSPF & Convergence)</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> October 9, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Routing Protocols</span>
+        </div>
+
+        <div class="skills-container" style="margin-bottom: 1.5rem;">
+          <span class="skill-badge">OSPF</span>
+          <span class="skill-badge">Static Routing</span>
+          <span class="skill-badge">Failover</span>
+          <span class="skill-badge">Cisco IOS</span>
+        </div>
+
+        <div class="blog-content">
+          <h3>Objective</h3>
+          <p>
+            Implement Cisco IOS static routing, floating routes with administrative distance, and dynamic link-state
+            routing via OSPFv2 while evaluating topology convergence and failover[cite: 2].
+          </p>
+
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            Configuring backup paths with floating static routes was a neat exercise, but watching OSPF calculate
+            shortest paths and dynamically converge after a link drop made it obvious why dynamic routing is required at
+            scale[cite: 2]. Seeing just a single dropped packet during the physical failover test really demonstrated
+            the efficiency of link-state protocols[cite: 2]. Digging into Dijkstra's algorithm for node path cost
+            calculations gave me a much stronger appreciation for how routing tables are actually derived[cite: 2].
+          </p>
+        </div>
+      </article>
+
+      <!-- Blog Entry 3: VLANs & Inter-VLAN Routing __________________________________________ -->
+      <article class="blog-post">
+        <h2>Lab 4: VLANs, 802.1Q Trunking, and Inter-VLAN Routing</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> September 28, 2026</span>
+          <span><i class="fa-solid fa-tag"></i> Switching & Trunking</span>
+        </div>
+
+        <div class="skills-container" style="margin-bottom: 1.5rem;">
+          <span class="skill-badge">VLANs</span>
+          <span class="skill-badge">802.1Q</span>
+          <span class="skill-badge">Inter-VLAN</span>
+          <span class="skill-badge">Router-on-a-Stick</span>
+        </div>
+
+        <div class="blog-content">
+          <h3>Objective</h3>
+          <p>
+            Configure switched broadcast domains with multiple VLANs, establish 802.1Q trunk links across switches, and
+            implement inter-VLAN routing using router sub-interfaces[cite: 6].
+          </p>
+
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            Setting up 'router-on-a-stick' and sub-interfaces gave me a clear picture of how Layer 2 separation
+            interacts with Layer 3 boundaries to segment traffic without wasting physical router interfaces[cite: 6].
+            Purposefully triggering a native VLAN mismatch was also a great sanity check on how trunk encapsulation
+            behaves when untagged frames traverse the link[cite: 6]. Tracing the ARP process between segregated VLANs
+            really helped bridge the gap between switch frame forwarding and router routing logic[cite: 6].
+          </p>
+        </div>
+      </article>
+
+
+      <!-- Blog Entry 2 _______________________________________________________________________-->
+      <article class="blog-post">
+        <h2>Lab 2: IP addressing and subnetting</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> September 14, 2026</span>
+          <span><i class="fa-solid fa-tag"></i>IP addressing</span>
+        </div>
+
+        <div class="skills-container" style="margin-bottom: 1.5rem;">
+          <span class="skill-badge">IPv4/IPv6</span>
+          <span class="skill-badge">Subnetting</span>
+          <span class="skill-badge">Cisco</span>
+        </div>
+
+        <div class="blog-content">
+          <h3>Objective</h3>
+          <p>
+            "This lab is intended to be an overview of IP addressing, the two formats in which IP addresses can be
+            represented (IPv4 and IPv6) and the difference between public and private IP addresses."
+          </p>
+
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            I found this lab challenging because it was my first experience subnetting. When we subnetted a network
+            "efficiently", I found that using variable length subnet masks was the best method.
+            IPv6 doesn't seem so challenging at the moment and I am excited to learn more.
+            I also decided that I need to read this chapter again, maybe the recommended readings and probably watch
+            some more class videos.
+            Since I updated this practice problems using AI was the way to go. If only I could think of a good AI prompt
+            for linux practice.
+          </p>
         </div>
       </article>
 
@@ -95,9 +234,10 @@
         </div>
 
         <div class="blog-content">
-            <h3>Objective</h3>
-            <p>
-            "This lab will provide an introduction to Cisco IOS, and how to use the Command Line Interface (CLI). This lab is intended to be an overview of Cisco IOS, and switching technology - STP"
+          <h3>Objective</h3>
+          <p>
+            "This lab will provide an introduction to Cisco IOS, and how to use the Command Line Interface (CLI). This
+            lab is intended to be an overview of Cisco IOS, and switching technology - STP"
             Learn how to perform basic switch configuration & troubleshooting including:
             - switch password assignment and IOS nagivation
             - How to Activate/deactivate a port
@@ -106,14 +246,16 @@
             Review the usage of Spanning Tree Protocol (STP) including how switching environments behave regarding:
             - network failure
             - network loops
-            </p>
+          </p>
 
-            <h3>Reflections & Key Takeaways</h3>
-            <p>
-            This lab was a bit challenging becuase most of my experience with CLI comes from other Linux platforms like RouterOS and Junos OS.
-            I also learned that STP is an effective tool in elminating loops within the network but can come at a cost. 
-            I am excited to learn more about STP and maybe ways that we can mitigate the issues that stem from its useage in a network.
-            </p>
+          <h3>Reflections & Key Takeaways</h3>
+          <p>
+            This lab was a bit challenging becuase most of my experience with CLI comes from other Linux platforms like
+            RouterOS and Junos OS.
+            I also learned that STP is an effective tool in elminating loops within the network but can come at a cost.
+            I am excited to learn more about STP and maybe ways that we can mitigate the issues that stem from its
+            useage in a network.
+          </p>
         </div>
       </article>
 
@@ -134,4 +276,5 @@
     overlay.addEventListener('click', toggleMenu);
   </script>
 </body>
+
 </html>
