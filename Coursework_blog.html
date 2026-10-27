@@ -71,16 +71,16 @@
           <h3>Objective</h3>
           <p>
             Learn how to accept user input and remotely access and configure network devices using Python automation
-            libraries, simulating a scalable deployment to reduce manual CLI overhead[cite: 8].
+            libraries, simulating a scalable deployment to reduce manual CLI overhead.
           </p>
 
           <h3>Reflections & Key Takeaways</h3>
           <p>
             Writing this Python tool with argparse and Netmiko really drove home how tedious manual configuration can be
-            when you scale beyond a single device[cite: 8]. I learned quickly that managing command timing and buffer
-            delays is essential when saving running configs over SSH so connections don't time out[cite: 8]. For next
+            when you scale beyond a single device. I learned quickly that managing command timing and buffer
+            delays is essential when saving running configs over SSH so connections don't time out. For next
             steps, I'd definitely want to refactor the script to ingest target host configs from structured YAML or JSON
-            files rather than manual prompts[cite: 8].
+            files rather than manual prompts.
           </p>
         </div>
       </article>
@@ -105,16 +105,16 @@
           <h3>Objective</h3>
           <p>
             Observe and analyze network protocol operations in action across link, internet, and application layers,
-            utilizing packet filters, custom profiles, continuous ring buffers, and Python pcap parsing[cite: 7].
+            utilizing packet filters, custom profiles, continuous ring buffers, and Python pcap parsing.
           </p>
 
           <h3>Reflections & Key Takeaways</h3>
           <p>
             Seeing the TCP three-way handshake and HTTP requests dissected down to the byte level made abstract
-            transport concepts much more concrete[cite: 7]. Building dedicated Wireshark profiles and coloring rules
-            showed me how much faster troubleshooting becomes when you strip away normal background traffic[cite: 7].
+            transport concepts much more concrete. Building dedicated Wireshark profiles and coloring rules
+            showed me how much faster troubleshooting becomes when you strip away normal background traffic.
             Writing the small Python script to pull source and destination IPs straight out of a raw .pcap file was also
-            a great exercise in packet-level inspection[cite: 7].
+            a great exercise in packet-level inspection.
           </p>
         </div>
       </article>
@@ -138,16 +138,16 @@
           <h3>Objective</h3>
           <p>
             Implement Cisco IOS static routing, floating routes with administrative distance, and dynamic link-state
-            routing via OSPFv2 while evaluating topology convergence and failover[cite: 2].
+            routing via OSPFv2 while evaluating topology convergence and failover.
           </p>
 
           <h3>Reflections & Key Takeaways</h3>
           <p>
             Configuring backup paths with floating static routes was a neat exercise, but watching OSPF calculate
             shortest paths and dynamically converge after a link drop made it obvious why dynamic routing is required at
-            scale[cite: 2]. Seeing just a single dropped packet during the physical failover test really demonstrated
-            the efficiency of link-state protocols[cite: 2]. Digging into Dijkstra's algorithm for node path cost
-            calculations gave me a much stronger appreciation for how routing tables are actually derived[cite: 2].
+            scale. Seeing just a single dropped packet during the physical failover test really demonstrated
+            the efficiency of link-state protocols. Digging into Dijkstra's algorithm for node path cost
+            calculations gave me a much stronger appreciation for how routing tables are actually derived.
           </p>
         </div>
       </article>
@@ -171,16 +171,16 @@
           <h3>Objective</h3>
           <p>
             Configure switched broadcast domains with multiple VLANs, establish 802.1Q trunk links across switches, and
-            implement inter-VLAN routing using router sub-interfaces[cite: 6].
+            implement inter-VLAN routing using router sub-interfaces.
           </p>
 
           <h3>Reflections & Key Takeaways</h3>
           <p>
             Setting up 'router-on-a-stick' and sub-interfaces gave me a clear picture of how Layer 2 separation
-            interacts with Layer 3 boundaries to segment traffic without wasting physical router interfaces[cite: 6].
+            interacts with Layer 3 boundaries to segment traffic without wasting physical router interfaces.
             Purposefully triggering a native VLAN mismatch was also a great sanity check on how trunk encapsulation
-            behaves when untagged frames traverse the link[cite: 6]. Tracing the ARP process between segregated VLANs
-            really helped bridge the gap between switch frame forwarding and router routing logic[cite: 6].
+            behaves when untagged frames traverse the link. Tracing the ARP process between segregated VLANs
+            really helped bridge the gap between switch frame forwarding and router routing logic.
           </p>
         </div>
       </article>
